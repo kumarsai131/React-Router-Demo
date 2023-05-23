@@ -1,13 +1,11 @@
 import "./App.css";
 import Navbar from "./Navbar";
 
-function App() {
+export default function Contact() {
   return (
     <div className="App">
       <Navbar />
-      <h1>Home Page</h1>
+      <h1>Contact Page</h1>
     </div>
   );
 }
-
-export default App;

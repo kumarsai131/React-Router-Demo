@@ -1,17 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import About from "./About";
+import Products from "./Products";
+import Contact from "./Contact";
+import SubProducts from "./SubProducts";
+import GoogleSearch from "./GoogleSearch";
+import ContactID from "./ContactID";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      <Route path="/about" element={<About />}>
+        {/* <Route path="google" element={<GoogleSearch />} /> */}
+      </Route>
+
+      <Route path="products">
+        <Route index={true} element={<Products />} />
+        <Route path=":id" element={<SubProducts />} />
+      </Route>
+
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/contact/:id" element={<ContactID />} />
+    </Routes>
+  </BrowserRouter>
+);

@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+ul{
+  list-style: none;
+}
+
+.active{
+  color : red;
+}
+
+.pending{
+  color : blue;
+}
+
+.p2{
+  padding: 0.5em;
+}
+
+.imgStyle{
+  width: 250px;
+  height: 300px;
+}
